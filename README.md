@@ -3,8 +3,7 @@ NINJA-SHI7 (pronounced "Shizen" for "nature") is a fastq-to-combined-fasta proce
 NOTE: The output combined fasta will be in QIIME-compatible format if the last line of make_map is uncommented and run with QIIME loaded.
 
 Instructions: 
-0. If there are adaptors, remove them (trimmomatic; do NOT use its trimming feature, only ILLUMINACLIP)
-
+0.  If there are adaptors, remove them (trimmomatic; do NOT use its trimming feature, only ILLUMINACLIP)
 1.  Compile ninja_shi7.c. Doing so is easy: 
  gcc -m64 -O3 -std=gnu99 -fwhole-program ninja_shi7.c -o ninja_shi7
 2.  Download or compile the FLASh software, which performs paired-end stitching. 
