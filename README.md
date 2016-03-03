@@ -9,7 +9,7 @@ Instructions:
 1. Compile ninja_shi7.c. Doing so is easy: gcc -m64 -O3 -std=gnu99 -fwhole-program ninja_shi7.c -o ninja_shi7
 2. Download or compile the FLASh software, which performs paired-end stitching. 
 3. If desired, load QIIME modules to perform final combination of files after running the pipeline
-4. Run each of the .sh scripts in order of filename. The last line of last file, make_map.sh, may be commented out if you do not have QIIME loaded.
+4. Run each of the .sh scripts in order of filename as desired (e.g. create_flasher, create_trimmer, make_fastas, make_map). The last line of last file, make_map.sh, may be commented out if you do not have QIIME loaded.
 
 
 Good luck! The combined seqs.fna should be able to run through NINJA-OPS or other downstream analysis software. 
