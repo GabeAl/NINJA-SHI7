@@ -6,4 +6,4 @@ for f in ./fasta/*.fasta; do
 	echo -e "$ARGFIRST\t$f" >> myMAP.txt
 done
 
-#add_qiime_labels.py -m myMAP.txt -i fasta -c filenames
+add_qiime_labels.py -m myMAP.txt -i fasta -c filenames
