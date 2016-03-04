@@ -1,13 +1,16 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
-
-void main(char *argv[], int argc) {
-	if (argc != 3) puts("Usage: infile.bad.fasta outfile.good.fasta");
+#define LINELEN 1000000000
+void main(int argc, char *argv[]) {
+	if (argc != 3) {puts("Usage: infile.bad.fasta outfile.good.fasta"); exit(1);}
 	char *filename = argv[1], *outfile = argv[2];
 	FILE *in = fopen(filename,"rb"), *out = fopen(outfile,"wb");
-	#define LINELEN 1000000000
-	char *nuts = malloc(LINELEN); // 1 gig
-	nuts[LINELEN-1] = 0;
-	
-	while (line = gets(in,)
+	char *line = malloc(LINELEN);
+	fputs(fgets(line,LINELEN,in),out);
+	while (line = fgets(line,LINELEN,in)) {
+		if (*line == '>') fputc('\n',out), fputs(line,out);
+		else *strchr(line,'\n') = 0, fputs(line,out);
+	}
+	fputs("\n",out);
 }
