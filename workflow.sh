@@ -9,3 +9,5 @@ create_flasher_strict_tc.sh
 create_trimmer_lengthOnly.sh
 make_fastas.sh
 make_map.sh
+
+setup_core_div.sh
