@@ -12,3 +12,9 @@ Instructions:
 5. Use the software by running the scripts in alphabetical order, chosing only one of each similarly named script depending on what options you wish to use. For instance: axe_adaptors_nextera_noL.sh, create_flasher_general.sh, create_trimmer_general_L100.sh, make_fasta.sh. 
 6. Optionally, if QIIME is installed and set up, you can run the final script, make_map.sh, to create a QIIME-compatible mapping file with the filenames as sample names (without the .fastq) and a combined_seqs.fna in QIIME format. 
 
+FAQ:
+
+1. `How do I know if there are adaptors? Even if there are, how can I know which ones were used by the sequencer?` Trial and error. Place a single fastq file into a testing directory and run a trimming script. Check if the reads got any shorter. If so, there were adaptors. Whichever technique (TS3 or Nextera) produces shorter reads is likely the correct result. 
+2. `What if I want to change the settings?` Simply open up the script and change the settings. Commandline interface will come soon-ish. Until then, if you want to change FLASh settings, modify "create_flasher_general.sh". For trimming settings, modify "create_trimmer_general.sh" (also run ninja_shi7 without any commandline options to see what can be changed). 
+3. `My file names are all janky.` Good question. Garbage in, garbage out -- I suggest a minimal naming scheme starting from your initial fastq files. Name each pair SAMPLENAME_R1.fastq, SAMPLENAME_R2.fastq for the most palatable results, and only use alphanumeric characters in the filenames, no dashes or spaces or colons or what have you. ;)
+4. `What if I have one giant fastq (well, one pair -- an R1 and R2) I want to split into samples?` Excellent you should ask. Use G0774_5PL17 (gotta_split) with an oligos.txt file to create multiple fastq's, one for each sample name (see: http://www.mothur.org/wiki/Oligos_File). Only BARCODE is supported. 
