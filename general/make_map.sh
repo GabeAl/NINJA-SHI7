@@ -5,5 +5,5 @@ for f in ./fasta/*.fasta; do
 	ARGFIRST=${ARGFIRST//[^a-Z0-9]/x}
 	echo -e "$ARGFIRST\t$f" >> myMAP.txt
 done
-
-#add_qiime_labels.py -m myMAP.txt -i fasta -c filenames
+echo "the following line will fail if QIIME is not loaded..."
+add_qiime_labels.py -m myMAP.txt -i fasta -c filenames
