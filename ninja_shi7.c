@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <smmintrin.h>
-#include <inttypes.h>
+//#include <inttypes.h>
 #include <string.h>
 
 #define SHOW_USAGE() {\
