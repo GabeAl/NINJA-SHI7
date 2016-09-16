@@ -1,5 +1,5 @@
 #include <stdio.h>
-//#include <smmintrin.h>
+#include <stdlib.h>
 #include <inttypes.h>
 #include <string.h>
 
